@@ -7,6 +7,11 @@ const { title } = require('node:process');
 const app = express();
 app.use(express.json());
 
+app.use((req, res, next) => {
+  console.log('Passenger sent →', req.method, req.url);
+  next();
+});
+
 const router = express.Router();
 
 router.get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
