@@ -9,7 +9,6 @@ app.use(express.json());
 
 const router = express.Router();
 
-router.get('/style.css', (req, res) => res.sendFile(path.join(__dirname, 'style.css')));
 router.get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
 
 const BASE_URI = process.env.BASE_URI || '/';
